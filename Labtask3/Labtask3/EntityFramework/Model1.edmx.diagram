@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7223e3feb0f44e1b81f0bfa1597e9631" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="labtask3Model.Category" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="labtask3Model.Order" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="labtask3Model.Product" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="labtask3Model.Product_Order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="labtask3Model.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="labtask3Model.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="labtask3Model.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="labtask3Model.FK_Product_Order_Order1" ManuallyRouted="false" />
+        <AssociationConnector Association="labtask3Model.FK_Product_Order_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

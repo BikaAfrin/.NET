@@ -1,0 +1,36 @@
+﻿@model Labtask3.EntityFramework.Product
+
+@{
+    ViewBag.Title = "PDetails";
+}
+
+<h2>Details</h2>
+
+<form class="form-inline form-control">
+    <div class="form-group mb-2">
+        <label  class="sr-only">Product Name: </label>
+        <label  class="sr-only">@Model.Name</label>
+        <br />
+
+        <label class="sr-only">Product Price: </label>
+        <label class="sr-only">@Model.Price</label>
+        <br />
+
+        <label class="sr-only">Product Quantity: </label>
+        <label class="sr-only">@Model.Quantity</label>
+        <br />
+
+        <label class="sr-only">Product Category: </label>
+        <label class="sr-only">@Model.Category.Name</label>
+        <br />
+        <br />
+
+        <input type="text" name="amount" placeholder="Enter amount" class="form-control" />
+        <br />
+        <br />
+        <a href="/User/PList/@Model.ID" class="btn btn-outline-primary">Add To Cart</a>
+
+    </div>
+
+    
+</form>

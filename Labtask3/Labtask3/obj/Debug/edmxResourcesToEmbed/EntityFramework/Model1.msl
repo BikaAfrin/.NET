@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="labtask3ModelStoreContainer" CdmEntityContainer="labtask3Entities4">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="labtask3Model.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="labtask3Model.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="labtask3Model.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Order">
+      <EntityTypeMapping TypeName="labtask3Model.Product_Order">
+        <MappingFragment StoreEntitySet="Product_Order">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="labtask3Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

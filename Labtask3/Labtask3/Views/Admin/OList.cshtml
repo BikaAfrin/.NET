@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Labtask3.EntityFramework.Order>
+
+@{
+    ViewBag.Title = "OList";
+}
+
+<h2>List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @if (item.Status.Equals("Pending"))
+         {
+            <td><a href="OEdit/@item.ID" >@item.Status</a></td>
+         }
+        else {
+            <td>@item.Status</td>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.UID)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "ODelete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

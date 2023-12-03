@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Mid.EntityFramework.Request_Item>
+
+@{
+    ViewBag.Title = "Requestlist";
+}
+
+<h2>Requestlist</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expiredate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expiredate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EID)
+            </td>
+            
+                @if (item.Status == "Waiting For Employee")
+                {
+                    <td><a href="/Employee/Collectfood/@item.ID">Collected</a></td>
+                }
+            
+
+        </tr>
+     }
+    <tr><td><a href="/Employee/LogOut">Log Out</a></td></tr>
+
+</table>

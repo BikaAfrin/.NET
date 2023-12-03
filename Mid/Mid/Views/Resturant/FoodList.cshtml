@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Mid.EntityFramework.Request_Item>
+
+@{
+    ViewBag.Title = "FoodList";
+}
+
+<h2>FoodList</h2>
+
+<p>
+    @Html.ActionLink("Create", "AddRequest")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expiredate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expiredate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EID)
+            </td>
+
+        </tr>
+    }
+    <tr>
+        <td>
+             <a href="/Resturant/LogOut">Log Out</a>
+        </td>
+    </tr>
+
+</table>

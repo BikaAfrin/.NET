@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Labtask3.EntityFramework.Product>
+
+@{
+    ViewBag.Title = "PList";
+}
+
+<h2>List</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Product Category</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Price</td>
+        <td>@item.Category.Name</td>
+        <td><a href="/User/AddToCart/@item.ID" class="btn btn-outline-primary">Add to Cart</a></td>
+        <td><a href="/User/PDetails/@item.ID" class="btn btn-outline-primary">Amount</a></td>
+    </tr>
+}
+
+</table>

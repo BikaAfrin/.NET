@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MIDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Request_Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expiredate" Type="date" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RID" Type="int" />
+    <Property Name="EID" Type="int" />
+  </EntityType>
+  <EntityType Name="Resturant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Request_Item_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Request_Item" Type="Self.Request_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Request_Item">
+        <PropertyRef Name="EID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Request_Item_Resturant">
+    <End Role="Resturant" Type="Self.Resturant" Multiplicity="0..1" />
+    <End Role="Request_Item" Type="Self.Request_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resturant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Request_Item">
+        <PropertyRef Name="RID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MIDModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request_Item" EntityType="Self.Request_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resturant" EntityType="Self.Resturant" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Request_Item_Employee" Association="Self.FK_Request_Item_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Request_Item" EntitySet="Request_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Request_Item_Resturant" Association="Self.FK_Request_Item_Resturant">
+      <End Role="Resturant" EntitySet="Resturant" />
+      <End Role="Request_Item" EntitySet="Request_Item" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
